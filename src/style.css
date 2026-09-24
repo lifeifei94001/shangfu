@@ -1,0 +1,109 @@
+:root {
+  --apple-bg: #f5f5f7;
+  --apple-card-bg: rgba(255, 255, 255, 0.82);
+  --apple-card-border: rgba(0, 0, 0, 0.07);
+  --apple-text-primary: #1d1d1f;
+  --apple-text-secondary: #86868b;
+  --apple-blue: #0071e3;
+  --apple-blue-hover: #0077ed;
+  --apple-green: #34c759;
+  --apple-orange: #ff9500;
+  --apple-red: #ff3b30;
+  --apple-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --apple-shadow-md: 0 8px 30px rgba(0, 0, 0, 0.06);
+  --apple-shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --apple-radius-sm: 8px;
+  --apple-radius-md: 14px;
+  --apple-radius-lg: 20px;
+  --apple-radius-full: 9999px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--apple-text-primary);
+  background-color: var(--apple-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--apple-bg);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(0, 113, 227, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(52, 199, 89, 0.03) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* 苹果风格卡片通用类 */
+.apple-card {
+  background: var(--apple-card-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--apple-card-border);
+  border-radius: var(--apple-radius-lg);
+  box-shadow: var(--apple-shadow-md);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-card:hover {
+  box-shadow: var(--apple-shadow-lg);
+}
+
+/* 覆盖 Element Plus 的部分默认外观以匹配 Apple 风格 */
+.el-button--primary {
+  --el-button-bg-color: var(--apple-blue);
+  --el-button-border-color: var(--apple-blue);
+  --el-button-hover-bg-color: var(--apple-blue-hover);
+  --el-button-hover-border-color: var(--apple-blue-hover);
+  font-weight: 500;
+  border-radius: var(--apple-radius-full) !important;
+}
+
+.el-button {
+  border-radius: var(--apple-radius-full) !important;
+  font-weight: 500;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.el-button:active {
+  transform: scale(0.97);
+}
+
+.el-input__wrapper {
+  border-radius: var(--apple-radius-sm) !important;
+  background-color: rgba(0, 0, 0, 0.03) !important;
+  box-shadow: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.2s ease;
+}
+
+.el-input__wrapper.is-focus {
+  background-color: #fff !important;
+  border-color: var(--apple-blue) !important;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15) !important;
+}
+
+.el-table {
+  --el-table-header-bg-color: rgba(245, 245, 247, 0.7);
+  --el-table-row-hover-bg-color: rgba(0, 113, 227, 0.04);
+  border-radius: var(--apple-radius-md);
+  overflow: hidden;
+}
+
+.el-table th.el-table__cell {
+  font-weight: 600;
+  color: var(--apple-text-secondary);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.el-tag {
+  border-radius: var(--apple-radius-full) !important;
+  font-weight: 500;
+}
